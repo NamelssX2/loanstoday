@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoanAdvance Pro | Fast Emergency Funding Solutions</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Verdana,sans-serif}
+body{background:#f8fafc;color:#333;line-height:1.6}
+.container{width:90%;max-width:1200px;margin:auto}
+:root{
+--primary:#1e40af;
+--secondary:#0ea5e9;
+--accent:#f59e0b;
+--dark:#1e293b;
+--gray:#64748b;
+--success:#10b981;
+}
+header{background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.05);position:sticky;top:0;z-index:999}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{display:flex;align-items:center;gap:10px}
+.logo i{font-size:26px;color:var(--primary)}
+.logo span{color:var(--accent)}
+.nav-links{list-style:none;display:flex;gap:25px}
+.nav-links a{text-decoration:none;color:var(--dark);font-weight:500}
+.hero{padding:80px 0;background:linear-gradient(135deg,#f0f9ff,#e0f2fe)}
+.hero-content{display:flex;gap:50px;align-items:center}
+.hero h1{font-size:3rem;margin-bottom:20px}
+.hero h1 span{color:var(--primary)}
+.hero p{color:var(--gray);font-size:1.1rem;margin-bottom:30px}
+.cta-button{background:linear-gradient(to right,var(--primary),var(--secondary));
+color:#fff;padding:18px 45px;border-radius:50px;font-size:1.1rem;
+text-decoration:none;border:none;cursor:pointer}
+.section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{font-size:2.4rem;color:var(--dark)}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.card{background:#fff;padding:30px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.06);text-align:center}
+#loan-form{background:#fff}
+footer{background:#1e293b;color:#cbd5e1;padding:40px 0;font-size:14px}
+@media(max-width:900px){
+.hero-content{flex-direction:column;text-align:center}
+.hero h1{font-size:2.2rem}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav class="navbar">
+<div class="logo"><i class="fas fa-hand-holding-usd"></i><strong>Loan<span>Advance</span> Pro</strong></div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#benefits">Benefits</a></li>
+<li><a href="#loan-form">Apply</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<div>
+<h1>Get <span>Emergency Cash</span> Fast</h1>
+<p>Connect with trusted U.S. lenders. All credit types welcome. No obligation.</p>
+<a href="#" class="cta-button">CHECK YOUR ELIGIBILITY</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="benefits">
+<div class="container">
+<div class="section-title">
+<h2>Why Choose Us</h2>
+</div>
+<div class="features">
+<div class="card"><h3>Fast Process</h3><p>Apply in minutes online.</p></div>
+<div class="card"><h3>Secure</h3><p>256-bit SSL encryption.</p></div>
+<div class="card"><h3>No Hidden Fees</h3><p>100% transparent.</p></div>
+</div>
+</div>
+</section>
+
+<!-- LOAN FORM SECTION -->
+<section id="loan-form" class="section">
+<div class="container">
+<div class="section-title">
+<h2>Apply Securely Below</h2>
+<p>Complete the form to see available loan options.</p>
+</div>
+
+<div id="offer-container" style="max-width:900px;margin:auto;"></div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p style="text-align:center">
+Disclaimer: This website is not a lender. We connect consumers with lending partners.
+</p>
+<p style="text-align:center;margin-top:10px">© 2026 LoanAdvance Pro</p>
+</div>
+</footer>
+
+<!-- ✅ IFRAME / OFFER SCRIPT (AUTO + CTA LOAD) -->
+<script src="https://www.rndframe.com/server/web/js/json.min.js"></script>
+
+<script>
+var srcURL='https://www.rndframe.com/server';
+var inputOptions={
+UserID:'d8DSz-0MauyIULEMZ4ubZCsVAGKR-B-P7TWJyGiGzQE.',
+Style:'STYLE1',
+FormID:'INSTALLMENT_STEP_VARIANT',
+Height:'AUTO',
+StepAmountSelect:'buttons'
+};
+
+var loaded=false;
+function loadOffer(){
+if(loaded) return;
+loaded=true;
+var s=document.createElement("script");
+s.src=srcURL+'/init.php?vn='+encodeURIComponent(JSON.stringify(inputOptions));
+document.getElementById("offer-container").appendChild(s);
+document.getElementById("loan-form").scrollIntoView({behavior:"smooth"});
+}
+
+setTimeout(loadOffer,5000);
+
+document.querySelectorAll('.cta-button').forEach(btn=>{
+btn.addEventListener('click',function(e){
+e.preventDefault();
+loadOffer();
+});
+});
+</script>
+
+</body>
+</html>
